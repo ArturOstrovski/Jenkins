@@ -10,8 +10,8 @@ pipeline {
                     }
                     steps {
                         script {
-                            def lop = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                            println lop
+                            env.myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true).trim()
+                            echo "Some ${env.myVariable}"
                         }
                     }
             
