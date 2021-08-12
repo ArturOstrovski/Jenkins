@@ -8,8 +8,8 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        def ret = bat(script: './Stages/Stage1.bat', returnStdout: true)
-                        echo $ret$
+                        ret = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        echo $ret
                     }
             
                 }
@@ -20,7 +20,16 @@ pipeline {
                     steps {
                         bat './Stages/Stage2.bat'
                     }
-                } 
+                }
+                stage('Stage Print Random') {
+                    agent {
+                        label "windows"
+                    }
+                    steps {
+                        echo $ret
+                    }
+            
+                }
             }    
         }
     }    
