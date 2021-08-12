@@ -27,7 +27,8 @@ pipeline {
                     }
                     steps {
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh './Stages/Stage4.sh Pavyko!!!'
+                        num = 5
+                        sh './Stages/Stage4.sh $num'
                     }
             
                 }
