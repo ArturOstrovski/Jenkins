@@ -10,6 +10,7 @@ pipeline {
                     }
                     steps {
                         script {
+                            echo "Labas"
                             env.myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true).trim()
                             echo "Some ${env.myVariable}"
                         }
