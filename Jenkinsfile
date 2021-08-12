@@ -2,7 +2,7 @@ def myVariable = ""
 pipeline {
     agent none
     parameters {
-        def person = ""
+        string(name: 'custom_var', defaultValue: '')
     }
     stages {
         stage('Run Stages') {
@@ -14,8 +14,8 @@ pipeline {
                     steps {
                        
                         echo "Labas"
-                        person = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                        echo "Some mothe $person"
+                        tmp_param = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        env.custom_var = tmp_param
                        
                     }
             
@@ -35,7 +35,7 @@ pipeline {
                     steps {
                         
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${myVariable}"
+                        sh "./Stages/Stage4.sh ${env.custom_var}"
                     }
             
                 }
