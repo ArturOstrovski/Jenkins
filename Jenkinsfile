@@ -11,7 +11,7 @@ pipeline {
                     steps {
                         script {
                             myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                            println(myVariable)
+                            echo "Niu ${myVariable}"
                         }
                     }
             
