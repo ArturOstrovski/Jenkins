@@ -4,7 +4,7 @@ pipeline {
         stage('Run Stages') {
             parallel {
                 stage('Stage batch') {
-                	agent {
+                    agent {
                         label "windows"
                     }
                     steps {
