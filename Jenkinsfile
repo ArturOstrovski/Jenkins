@@ -1,4 +1,4 @@
-def myVariable = "foo"
+def myVariable = ""
 pipeline {
     agent none
     stages {
@@ -10,8 +10,8 @@ pipeline {
                     }
                     steps {
                         script {
-                            def num = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                            println(num)
+                            myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                            println(myVariable)
                         }
                     }
             
