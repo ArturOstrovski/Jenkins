@@ -10,9 +10,6 @@ pipeline {
                     }
                     steps {
                         script {
-                            
-                            def disk_size = bat (script: "df / --output=avail | tail -1", returnStdout: true).trim() as Integer
-                            println("disk_size = ${disk_size}")
                             echo "Labas"
                             myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true)
                             echo "Some muther... ${myVariable}"
@@ -33,9 +30,13 @@ pipeline {
                         label "linux"
                     }
                     steps {
-                        
+                        script {
+                            def disk_size = bat (script: "df / --output=avail | tail -1", returnStdout: true).trim() as Integer
+                            println("disk_size = ${disk_size}")
+                        }
                         sh "chmod +x ./Stages/Stage4.sh"
                         sh "./Stages/Stage4.sh ${env.custom_var}"
+                        
                     }
             
                 }
