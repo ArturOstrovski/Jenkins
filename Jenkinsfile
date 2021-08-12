@@ -1,5 +1,8 @@
 pipeline {
     agent none
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Aha...aha...')
+    }    
     stages {
         stage('Run Stages') {
             parallel {
@@ -27,8 +30,7 @@ pipeline {
                     }
                     steps {
                         sh "chmod +x ./Stages/Stage4.sh"
-                        num = "5"
-                        sh './Stages/Stage4.sh $num'
+                        sh './Stages/Stage4.sh ${params.PERSON}'
                     }
             
                 }
