@@ -14,8 +14,8 @@ pipeline {
                     steps {
                        
                         echo "Labas"
-                        params.PERSON = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                        echo "Some mothe $params.PERSON"
+                        PERSON = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        echo "Some mothe $PERSON"
                        
                     }
             
