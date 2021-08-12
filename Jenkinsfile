@@ -9,15 +9,11 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        script {
-                            echo "Labas"
-                            def lariable = bat (script: './Stages/Stage1.bat', returnStdout: true).trim()
-                            println ("Some muther... ${lariable}")
-                        }
+                        bat './Stages/Stage1.bat'    
                     }
             
                 }
-                stage('Stage generate') {
+                stage('Stage generate number') {
                     agent {
                         label "windows"
                     }
