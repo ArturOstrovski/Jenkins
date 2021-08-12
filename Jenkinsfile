@@ -30,7 +30,7 @@ pipeline {
                         
                         sh "chmod +x ./Stages/Stage4.sh"
                         echo "${myVariable}"
-                        sh './Stages/Stage4.sh "echo '${myVariable}'"'
+                        sh "./Stages/Stage4.sh ${myVariable}"
                     }
             
                 }
