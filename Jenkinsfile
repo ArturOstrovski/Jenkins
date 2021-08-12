@@ -1,4 +1,4 @@
-def myVariable = ""
+def myVariable
 pipeline {
     agent none
     stages {
@@ -11,8 +11,8 @@ pipeline {
                     steps {
                        
                         echo "Labas"
-                        tmp_param = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                        env.custom_var = tmp_param
+                        $tmp_param = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        env.custom_var = $tmp_param
                        
                     }
             
