@@ -31,7 +31,7 @@ pipeline {
                     steps {
                         
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${num}"
+                        sh "./Stages/Stage4.sh ${myVariable}"
                     }
             
                 }
