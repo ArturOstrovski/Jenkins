@@ -8,8 +8,8 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        ret = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                        echo $ret
+                        bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        
                     }
             
                 }
