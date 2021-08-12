@@ -4,11 +4,11 @@ pipeline {
         stage('Run Stages') {
             parallel {
                 stage('Stage batch') {
-                    agent {
+                	agent {
                         label "windows"
                     }
                     steps {
-                        build job: 'Stage 1'
+                        bat './Jenkins/Stage1.bat'
                     }
             
                 }
@@ -17,7 +17,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        build job: 'Stage 2'
+                        bat './Jenkins/Stage2.bat'
                     }
                 } 
             }    
