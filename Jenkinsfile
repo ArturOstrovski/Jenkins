@@ -12,6 +12,7 @@ pipeline {
                         script {
                             def num = bat (script: './Stages/Stage1.bat', returnStdout: true)
                             println(num)
+                            myVariable = $num 
                         }
                     }
             
