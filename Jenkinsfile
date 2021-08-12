@@ -10,8 +10,8 @@ pipeline {
                     }
                     steps {
                         script {
-                        echo "Labas"
-                        myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                            echo "Labas"
+                            myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true)
                             echo "Some muther... ${myVariable}"
                         }
                     }
