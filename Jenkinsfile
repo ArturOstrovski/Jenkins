@@ -30,10 +30,10 @@ pipeline {
                     }
                     steps {
                         script {
-                            Larson = "666"
+                            def Boy = "666"
                         }
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh './Stages/Stage4.sh $Larson'
+                        sh './Stages/Stage4.sh $Boy'
                     }
             
                 }
