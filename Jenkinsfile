@@ -29,8 +29,10 @@ pipeline {
                         label "linux"
                     }
                     steps {
+                        script {
+                            Larson = "666"
+                        }
                         sh "chmod +x ./Stages/Stage4.sh"
-                        Larson = "Yup"
                         sh './Stages/Stage4.sh $Larson'
                     }
             
