@@ -11,7 +11,7 @@ pipeline {
                     steps {
                         script {
                             def lop = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                            println "Niu" lop
+                            println lop
                         }
                     }
             
