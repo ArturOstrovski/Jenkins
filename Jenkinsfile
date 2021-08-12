@@ -1,7 +1,7 @@
 pipeline {
     agent none
     parameters {
-        string(name: 'PERSON', defaultValue: 'Aha...aha...')
+        person = "TikrAi TAIP!"
     }    
     stages {
         stage('Run Stages') {
@@ -30,7 +30,7 @@ pipeline {
                     }
                     steps {
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh './Stages/Stage4.sh $PERSON'
+                        sh './Stages/Stage4.sh $person'
                     }
             
                 }
