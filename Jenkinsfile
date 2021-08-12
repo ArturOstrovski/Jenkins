@@ -1,7 +1,7 @@
 pipeline {
     agent none
     parameters {
-        string(name: 'Larson', defaultValue: 'Tikrai TAIP', description: 'Who should I say hello to?')
+        string(name: 'Larson', defaultValue: 'Tikrai TAIP!!!', description: 'Who should I say hello to?')
     }    
     stages {
         stage('Run Stages') {
@@ -30,7 +30,7 @@ pipeline {
                     }
                     steps {
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh './Stages/Stage4.sh $Larson'
+                        sh './Stages/Stage4.sh $Larson$'
                     }
             
                 }
