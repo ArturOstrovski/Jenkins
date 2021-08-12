@@ -12,7 +12,6 @@ pipeline {
                         script {
                             def num = bat (script: './Stages/Stage1.bat', returnStdout: true)
                             println(num)
-                            def wax = $num 
                         }
                     }
             
@@ -32,7 +31,7 @@ pipeline {
                     steps {
                         
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${wax}"
+                        sh "./Stages/Stage4.sh ${num}"
                     }
             
                 }
