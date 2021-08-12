@@ -23,10 +23,10 @@ pipeline {
                 }
                 stage('Stage Print Random') {
                     agent {
-                        label "windows"
+                        label "linux"
                     }
                     steps {
-                        echo $ret
+                        echo 'Labas'
                     }
             
                 }
