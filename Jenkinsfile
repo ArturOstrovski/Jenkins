@@ -1,6 +1,9 @@
 def myVariable = ""
 pipeline {
     agent none
+    parameters {
+        string(name: 'PERSON', defaultValue: '', description: 'Who should I say hello to?')
+    }
     stages {
         stage('Run Stages') {
             parallel {
@@ -9,11 +12,11 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        script {
-                            echo "Labas"
-                            env.myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                            echo "Some mothe $env.myVariable"
-                        }
+                       
+                        echo "Labas"
+                        params.PERSON = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        echo "Some mothe $params.PERSON"
+                       
                     }
             
                 }
