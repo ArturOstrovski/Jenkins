@@ -1,9 +1,6 @@
 def myVariable = ""
 pipeline {
     agent none
-    parameters {
-        string(name: 'custom_var', defaultValue: '')
-    }
     stages {
         stage('Run Stages') {
             parallel {
