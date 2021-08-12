@@ -26,6 +26,7 @@ pipeline {
                         label "linux"
                     }
                     steps {
+                        sh "chmod +x ./Stages/Stage4.sh"
                         sh './Stages/Stage4.sh'
                     }
             
