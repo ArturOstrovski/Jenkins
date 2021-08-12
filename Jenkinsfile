@@ -9,11 +9,11 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                       
+                        script {
                         echo "Labas"
-                        $tmp_param = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                        env.custom_var = $tmp_param
-                       
+                        def tmp_param = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        Echo "Some muther... $tmp_param"
+                        }
                     }
             
                 }
