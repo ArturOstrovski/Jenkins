@@ -12,7 +12,7 @@ pipeline {
                         script {
                         echo "Labas"
                         def tmp_param = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                        Echo "Some muther... $tmp_param"
+                        echo "Some muther... $tmp_param"
                         }
                     }
             
