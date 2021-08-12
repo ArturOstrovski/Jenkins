@@ -26,7 +26,7 @@ pipeline {
                         label "linux"
                     }
                     steps {
-                        echo 'Labas'
+                        sh './Stages/Stage4.sh Pavyko!!!'
                     }
             
                 }
