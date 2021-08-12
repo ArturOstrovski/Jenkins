@@ -2,7 +2,7 @@ def myVariable = ""
 pipeline {
     agent none
     parameters {
-        string(name: 'PERSON', defaultValue: '', description: 'Who should I say hello to?')
+        def person = ""
     }
     stages {
         stage('Run Stages') {
@@ -14,8 +14,8 @@ pipeline {
                     steps {
                        
                         echo "Labas"
-                        $PERSON = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                        echo "Some mothe $PERSON"
+                        person = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        echo "Some mothe $person"
                        
                     }
             
