@@ -8,7 +8,8 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        bat './Stages/Stage1.bat'
+                        def ret = bat(script: './Stages/Stage1.bat', returnStdout: true)
+                        echo ret
                     }
             
                 }
