@@ -10,8 +10,8 @@ pipeline {
                     }
                     steps {
                         script {
-                            def Variable = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                            echo "Niu ${Variable}"
+                            def lop = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                            echo "Niu ${lop}"
                         }
                     }
             
