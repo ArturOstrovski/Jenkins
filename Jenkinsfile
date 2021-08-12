@@ -29,7 +29,7 @@ pipeline {
                     steps {
                         
                         sh "chmod +x ./Stages/Stage4.sh"
-                        ${myVariable} = "lopas..."
+                        $myVariable = "lopas..."
                         sh "./Stages/Stage4.sh ${myVariable}"
                     }
             
