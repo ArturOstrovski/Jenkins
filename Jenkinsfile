@@ -12,7 +12,7 @@ pipeline {
                         script {
                             echo "Labas"
                             env.myVariable = bat (script: './Stages/Stage1.bat', returnStdout: true)
-                            echo "Some mothe ${env.myVariable}"
+                            echo "Some mothe $env.myVariable"
                         }
                     }
             
