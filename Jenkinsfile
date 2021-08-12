@@ -9,7 +9,7 @@ pipeline {
                     }
                     steps {
                         def ret = bat(script: './Stages/Stage1.bat', returnStdout: true)
-                        echo ret
+                        echo $ret$
                     }
             
                 }
