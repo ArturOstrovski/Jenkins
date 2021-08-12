@@ -8,7 +8,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        bat './Jenkins/Stage1.bat'
+                        bat './Stages/Stage1.bat'
                     }
             
                 }
@@ -17,7 +17,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        bat './Jenkins/Stage2.bat'
+                        bat './Stages/Stage2.bat'
                     }
                 } 
             }    
