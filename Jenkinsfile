@@ -26,7 +26,7 @@ pipeline {
                         label "linux"
                     }
                     steps {
-                        sh './Stages/Stage4.sh Pavyko!!!'
+                        sh './Stages/Stage4.sh'
                     }
             
                 }
