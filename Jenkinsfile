@@ -1,7 +1,7 @@
 pipeline {
     agent none
     parameters {
-        string(name: 'Larson', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string(name: 'Larson', defaultValue: 'Tikrai TAIP', description: 'Who should I say hello to?')
     }    
     stages {
         stage('Run Stages') {
