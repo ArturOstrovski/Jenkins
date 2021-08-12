@@ -9,7 +9,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        def lux = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                        bat './Stages/Stage1.bat'
                         
                     }
             
@@ -29,7 +29,7 @@ pipeline {
                     steps {
                         
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${lux}"
+                        sh "./Stages/Stage4.sh ${myVariable}"
                     }
             
                 }
