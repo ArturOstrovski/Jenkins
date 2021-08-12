@@ -1,3 +1,4 @@
+def myVariable = "foo"
 pipeline {
     agent none
     parameters {
@@ -30,9 +31,8 @@ pipeline {
                     }
                     steps {
                         
-                        def Boy = "666"
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh './Stages/Stage4.sh $Boy'
+                        sh './Stages/Stage4.sh ${myVariable}'
                     }
             
                 }
