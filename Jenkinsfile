@@ -11,7 +11,7 @@ pipeline {
                     steps {
                         script {
                             echo "Labas"
-                            def lariable = bat (script: './Stages/Stage1.bat', returnStdout: true).trim() as Integer
+                            def lariable = bat (script: './Stages/Stage1.bat', returnStdout: true).trim()
                             println ("Some muther... ${lariable}")
                         }
                     }
