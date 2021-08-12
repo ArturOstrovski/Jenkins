@@ -9,8 +9,10 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        bat './Stages/Stage1.bat'
-                        
+                        script {
+                            def num = bat (script: './Stages/Stage1.bat', returnStdout: true)
+                            println(num)
+                        }
                     }
             
                 }
