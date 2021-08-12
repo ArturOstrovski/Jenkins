@@ -1,9 +1,6 @@
 def myVariable = "foo"
 pipeline {
     agent none
-    parameters {
-        string(name: 'Larson', defaultValue: 'Tikrai TAIP!!!', description: 'Who should I say hello to?')
-    }    
     stages {
         stage('Run Stages') {
             parallel {
