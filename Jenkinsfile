@@ -13,7 +13,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        ${params.LARSON} = bat './Stages/Stage1.bat'    
+                        ${params.LARSON} = bat (script: './Stages/Stage1.bat', returnStdout: true).trim()    
                     }
             
                 }
