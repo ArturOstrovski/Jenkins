@@ -34,6 +34,7 @@ pipeline {
                     steps {
                         script {
                             groovy2 = load "./Stages/Stage3.groovy"
+                            groovy2.PrintFreeSpace()
                         } 
                     }
                 }
