@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Ar tikrai...? $1"
+echo "Random generated number: $1"
