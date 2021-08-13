@@ -14,6 +14,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
+                        sleep 10
                         bat './Stages/Stage1.bat'
                         echo "Pirmas $nums"
                     }
@@ -40,6 +41,7 @@ pipeline {
                             def disk_size = sh (script: "df / --output=avail | tail -1", returnStdout: true).trim() as Integer
                             println("disk_size = $nums")
                         }
+                        sh "sleep 5"
                         sh "chmod +x ./Stages/Stage4.sh"
                         sh "./Stages/Stage4.sh ${nums}"
                         
