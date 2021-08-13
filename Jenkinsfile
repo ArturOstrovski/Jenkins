@@ -1,6 +1,10 @@
 def myVariable
 pipeline {
     agent none
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string(name: 'LARSON', defaultValue: '', description: 'Nobody')
+    }    
     stages {
         stage('Run Stages') {
             parallel {
@@ -9,7 +13,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        bat './Stages/Stage1.bat'    
+                        params.LARSON = bat './Stages/Stage1.bat'    
                     }
             
                 }
@@ -31,7 +35,7 @@ pipeline {
                             println("disk_size = ${disk_size}")
                         }
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${disk_size}"
+                        sh "./Stages/Stage4.sh ${PERSON}"
                         
                     }
             
