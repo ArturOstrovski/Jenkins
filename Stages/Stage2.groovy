@@ -1,5 +1,5 @@
 def buildRandom () {
-  def num = "5"
-  return num
+  Random random = new Random()
+  return random.nextInt(100)
 }
 return this 
