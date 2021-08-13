@@ -31,7 +31,7 @@ pipeline {
                             println("disk_size = ${disk_size}")
                         }
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${env.custom_var}"
+                        sh "./Stages/Stage4.sh ${disk_size}"
                         
                     }
             
