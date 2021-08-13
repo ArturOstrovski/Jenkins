@@ -1,4 +1,4 @@
-def myVariable
+def myVariable = "Loo"
 pipeline {
     agent none
     parameters {
@@ -13,8 +13,8 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        ${params.LARSON} = "Less" 
-                        echo "${params.LARSON}"
+                        
+                        echo "$myVariable"
                     }
             
                 }
