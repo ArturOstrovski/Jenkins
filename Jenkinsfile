@@ -23,11 +23,9 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        script {
-                            dv = load "./Stages/Stage2.groovy"
-                            nums = dv.buildRandom()
-                            echo "$nums"
-                        } 
+                        dv = load "./Stages/Stage2.groovy"
+                        nums = dv.buildRandom()
+                        echo "$nums" 
                     }
                 }
                 stage('Stage Print Random') {
