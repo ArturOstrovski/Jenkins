@@ -1,4 +1,5 @@
 def dv
+def nums
 pipeline {
     agent none
     parameters {
@@ -24,7 +25,8 @@ pipeline {
                     steps {
                         script {
                             dv = load "./Stages/Stage2.groovy"
-                            dv.buildRandom()
+                            nums = dv.buildRandom()
+                            echo "$nums"
                         } 
                     }
                 }
