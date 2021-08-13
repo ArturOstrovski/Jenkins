@@ -1,4 +1,5 @@
 def buildRandom () {
-  echo 'Some shit'
+  def num = "5"
+  return num
 }
 return this 
