@@ -15,7 +15,7 @@ pipeline {
                     }
                     steps {
                         bat './Stages/Stage1.bat'
-                        echo "$nums"
+                        echo "Pirmas $nums"
                     }
             
                 }
@@ -27,7 +27,7 @@ pipeline {
                         script {
                             dv = load "./Stages/Stage2.groovy"
                             nums = dv.buildRandom()
-                            echo "$nums"
+                            echo "Antras $nums"
                         } 
                     }
                 }
