@@ -15,6 +15,7 @@ pipeline {
                     }
                     steps {
                         bat './Stages/Stage1.bat'
+                        echo "$nums"
                     }
             
                 }
@@ -23,9 +24,11 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        dv = load "./Stages/Stage2.groovy"
-                        nums = dv.buildRandom()
-                        echo "$nums" 
+                        script {
+                            dv = load "./Stages/Stage2.groovy"
+                            nums = dv.buildRandom()
+                            echo "$nums"
+                        } 
                     }
                 }
                 stage('Stage Print Random') {
@@ -38,7 +41,7 @@ pipeline {
                             println("disk_size = ${disk_size}")
                         }
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh $nums"
+                        sh "./Stages/Stage4.sh ${nums}"
                         
                     }
             
