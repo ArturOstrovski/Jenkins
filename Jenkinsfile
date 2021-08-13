@@ -1,5 +1,6 @@
-def dv
-def nums
+def groovy1
+def groovy2
+def random_number
 pipeline {
     agent none   
     stages {
@@ -14,15 +15,26 @@ pipeline {
                     }
             
                 }
-                stage('Stage generate number') {
+                stage('Stage Generate Random Number') {
                     agent {
                         label "windows"
                     }
                     steps {
                         script {
-                            dv = load "./Stages/Stage2.groovy"
-                            nums = dv.buildRandom()
-                            echo "Antras $nums"
+                            groovy1 = load "./Stages/Stage2.groovy"
+                            random_number = gr1.buildRandom()
+                            echo "Antras $rdnum"
+                        } 
+                    }
+                }
+                stage('Stage Free Disk Space') {
+                    agent {
+                        label "windows"
+                    }
+                    steps {
+                        script {
+                            groovy2 = load "./Stages/Stage3.groovy"
+                            groovy2.PrintFreeSpace()
                         } 
                     }
                 }
@@ -31,14 +43,9 @@ pipeline {
                         label "linux"
                     }
                     steps {
-                        script {
-                            def disk_size = sh (script: "df / --output=avail | tail -1", returnStdout: true).trim() as Integer
-                            println("disk_size = $nums")
-                        }
                         sh "sleep 5"
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${nums}"
-                        
+                        sh "./Stages/Stage4.sh ${random_number}"       
                     }
                 }
             }    
