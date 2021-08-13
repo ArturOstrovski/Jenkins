@@ -13,7 +13,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        
+                        myVariable = "LOPas"
                         echo "$myVariable"
                     }
             
