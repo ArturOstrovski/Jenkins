@@ -1,22 +1,16 @@
 def dv
 def nums
 pipeline {
-    agent none
-    parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        string(name: 'LARSON', defaultValue: '', description: 'Nobody')
-    }    
+    agent none   
     stages {
-        stage('Run Stages') {
+        stage('Run Stages in Parallel') {
             parallel {
-                stage('Stage batch') {
+                stage('Stage Build Number') {
                     agent {
                         label "windows"
                     }
                     steps {
-                        sleep 10
                         bat './Stages/Stage1.bat'
-                        echo "Pirmas $nums"
                     }
             
                 }
