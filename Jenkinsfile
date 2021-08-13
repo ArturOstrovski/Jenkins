@@ -13,7 +13,8 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        ${params.LARSON} = bat (script: './Stages/Stage1.bat', returnStdout: true).trim()    
+                        ${params.LARSON} = "Less" 
+                        echo "${params.LARSON}"
                     }
             
                 }
@@ -35,7 +36,7 @@ pipeline {
                             println("disk_size = ${disk_size}")
                         }
                         sh "chmod +x ./Stages/Stage4.sh"
-                        sh "./Stages/Stage4.sh ${PERSON}"
+                        sh "./Stages/Stage4.sh ${params.PERSON}"
                         
                     }
             
