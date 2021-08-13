@@ -1,4 +1,4 @@
-def myVariable = "Loo"
+def dv
 pipeline {
     agent none
     parameters {
@@ -13,8 +13,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        myVariable = "LOPas"
-                        echo "$myVariable"
+                        bat './Stages/Stage1.bat'
                     }
             
                 }
@@ -23,7 +22,10 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        bat './Stages/Stage2.bat'
+                        script {
+                            dv = load "./Stages/Stage2.groovy"
+                            dv.buildRandom()
+                        } 
                     }
                 }
                 stage('Stage Print Random') {
