@@ -26,8 +26,8 @@ pipeline {
                     steps {
                         script {
                             dv = load "./Stages/Stage2.groovy"
-                            params.LARSON = dv.buildRandom()
-                            echo "${params.LARSON}"
+                            nums = dv.buildRandom()
+                            echo "$nums"
                         } 
                     }
                 }
