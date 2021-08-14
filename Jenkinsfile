@@ -35,7 +35,7 @@ pipeline {
                     steps {
                         script {
                             groovy2 = load "./Stages/Stage3.groovy"
-                            free_disk_space = groovy2.free_space()
+                            free_disk_space = groovy2.free_Spacesss()
                         } 
                     }
                 }
