@@ -1,7 +1,7 @@
 package com.javacodegeeks.java.core;
  
 import java.io.File;
-def PrintFreeSpace () {
+def PrintFreeSpace() {
 
     File diskPartition = new File("C:");
     long totalCapacity = diskPartition.getTotalSpace(); 
