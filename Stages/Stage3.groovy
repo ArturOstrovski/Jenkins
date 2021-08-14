@@ -7,7 +7,7 @@ import java.io.File
  
         def diskPartition = new File("C:")
      
-        File file = new File("C:/file/file.txt") 
+        File file = new File("C:\file\file.txt") 
         println file.text 
         
         def sampleDirSize = diskPartition.directorySize()
