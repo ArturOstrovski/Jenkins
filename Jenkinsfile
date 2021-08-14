@@ -13,7 +13,7 @@ pipeline {
                     }
                     steps {
                         script {
-                            def disk_sizez = bat(script: "dir 'C:/Jenkins/workspace'", returnStdout: true).trim()
+                            def disk_sizez = bat(script: "dir 'fsutil volume diskfree C:\Jenkins\workspace", returnStdout: true).trim()
                             println("disk_size = ${disk_sizez}")
                         }
                         bat './Stages/Stage1.bat'
