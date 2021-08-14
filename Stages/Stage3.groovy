@@ -1,3 +1,6 @@
+package com.javacodegeeks.java.core;
+ 
+import java.io.File;
 def PrintFreeSpace() {
 
     File diskPartition = new File("C:");
