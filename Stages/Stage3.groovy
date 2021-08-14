@@ -12,5 +12,6 @@ def free_Space () {
     System.out.println("Usable Space : " + usablePatitionSpace / (1024 *1024*1024) + " GB");
     System.out.println("Free Space : " + freePartitionSpace / (1024 *1024*1024) + " GB");
     
+return this
 }
 return this
