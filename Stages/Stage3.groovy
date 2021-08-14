@@ -1,6 +1,6 @@
 def PrintFreeSpace() {
 
-    fsutil volume diskfree C:
+    println(fsutil volume diskfree C:)
     
 }
 return this
