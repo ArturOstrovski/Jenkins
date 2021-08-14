@@ -1,24 +1,7 @@
-package com.javacodegeeks.java.core
- 
-import java.io.File
- 
- 
-    def free_Spacesss () {
- 
-        def diskPartition = new File("C:")
-     
-        File file = new File("C:/Jenkins/workspace") 
-        println file.text 
-        
-        def sampleDirSize = diskPartition.directorySize()
-        long totalCapacity = diskPartition.getTotalSpace() 
- 
-        long freePartitionSpace = diskPartition.getFreeSpace()
-        long usablePatitionSpace = diskPartition.getUsableSpace()
-        
-        println("Total C partition size : " + sampleDirSize + " GB")
-        println("Total C partition size : " + totalCapacity / (1024*1024*1024) + " GB")
-        println("Usable Space : " + usablePatitionSpace / (1024 *1024*1024) + " GB")
-        println("Free Space : " + freePartitionSpace / (1024 *1024*1024) + " GB")
+def free_Space () {
+    
+    def disk_size = bat(script: "fsutil volume diskfree C:/Jenkins/workspace", returnStdout: true).trim()
+    println("disk_size = ${disk_size}")
+
     }
 return this
