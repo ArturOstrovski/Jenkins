@@ -13,7 +13,7 @@ pipeline {
                     }
                     steps {
                         script {
-                            def disk_size = bat (script: "dir C:\", returnStdout: true)
+                            def disk_size = bat (script: "dir C:\")
                             println("disk_size = ${disk_size}")
                         }
                         bat './Stages/Stage1.bat'
