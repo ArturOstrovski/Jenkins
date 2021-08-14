@@ -23,7 +23,6 @@ pipeline {
                         script {
                             groovy1 = load "./Stages/Stage2.groovy"
                             random_number = groovy1.buildRandom()
-                            echo "Antras $random_number"
                         } 
                     }
                 }
