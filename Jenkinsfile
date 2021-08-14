@@ -35,7 +35,7 @@ pipeline {
                     steps {
                         script {
                             groovy2 = load "./Stages/Stage3.groovy"
-                            free_disk_space = groovy2.free_Space()
+                            groovy2.free_Space()
                         } 
                     }
                 }
@@ -44,11 +44,7 @@ pipeline {
                         label "linux"
                     }
                     steps {
-                        script {
-                            def disk_size = sh(script: "df / --output=avail | tail -1", returnStdout: true).trim() as Integer
-                            println("disk_size = ${disk_size}")
-                        }
-                        sh "sleep 5"
+                        sh "sleep 3"
                         sh "chmod +x ./Stages/Stage4.sh"
                         sh "./Stages/Stage4.sh ${random_number}"       
                     }
