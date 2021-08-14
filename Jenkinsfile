@@ -13,7 +13,7 @@ pipeline {
                     }
                     steps {
                         bat './Stages/Stage1.bat'
-                        bat ("dir C:\")
+                        echo bat (script: "dir C:\")
                     }
             
                 }
