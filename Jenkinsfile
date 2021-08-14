@@ -38,7 +38,7 @@ pipeline {
                         } 
                     }
                 }
-                stage('Stage Print Random') {
+                stage('Stage Print Random Generated Number') {
                     agent {
                         label "linux"
                     }
