@@ -1,6 +1,6 @@
 def free_Space () {
     
-    bat(script: "fsutil volume diskfree C:/Jenkins/workspace", returnStdout: true).trim()
+    free_disk_size = bat(script: "fsutil volume diskfree C:/Jenkins/workspace", returnStdout: true).trim()
 
     }
 return this
