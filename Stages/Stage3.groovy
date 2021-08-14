@@ -2,7 +2,6 @@ package com.javacodegeeks.java.core
  
 import java.io.File
  
-public class DiskSpaceDetail {
  
     def free_Spacesss () {
  
@@ -17,5 +16,4 @@ public class DiskSpaceDetail {
         println("Usable Space : " + usablePatitionSpace / (1024 *1024*1024) + " GB")
         println("Free Space : " + freePartitionSpace / (1024 *1024*1024) + " GB")
     }
-}
 return this
