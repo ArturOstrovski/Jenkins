@@ -1,7 +1,6 @@
 def groovy1
 def groovy2
 def random_number
-def free_disk_space
 pipeline {
     agent none   
     stages {
