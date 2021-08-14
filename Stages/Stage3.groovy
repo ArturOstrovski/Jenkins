@@ -6,6 +6,9 @@ import java.io.File
     def free_Spacesss () {
  
         def diskPartition = new File("C:")
+     
+        File file = new File("C:/file/file.txt") 
+        println file.text 
         
         def sampleDirSize = diskPartition.directorySize()
         long totalCapacity = diskPartition.getTotalSpace() 
