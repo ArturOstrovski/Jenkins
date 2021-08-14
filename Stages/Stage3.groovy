@@ -4,7 +4,7 @@ import java.io.File
  
 public class DiskSpaceDetail {
  
-    public static void main(String[] args) {
+    def free_space {
  
         File diskPartition = new File("C:")
  
