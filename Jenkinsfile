@@ -1,6 +1,7 @@
 def groovy1
 def groovy2
 def random_number
+def free_disk_space
 pipeline {
     agent none   
     stages {
@@ -34,7 +35,7 @@ pipeline {
                     steps {
                         script {
                             groovy2 = load "./Stages/Stage3.groovy"
-                            groovy2.PrintFreeSpace()
+                            free_disk_space = groovy2.PrintFreeSpace()
                         } 
                     }
                 }
