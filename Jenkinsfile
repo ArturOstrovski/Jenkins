@@ -24,9 +24,7 @@ pipeline {
                             groovy1 = load "./Stages/Stage2.groovy"
                             random_number = groovy1.buildRandom()
                         } 
-                    }
-                }
-                stage('Stage Free Disk Space') {
+         
                     agent {
                         label "windows"
                     }
