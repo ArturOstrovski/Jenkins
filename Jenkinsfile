@@ -13,7 +13,7 @@ pipeline {
                     }
                     steps {
                         script {
-                            def disk_size = bat (script: "dir C:\") as String
+                            def disk_size = bat (script: "dir C:\", returnStdout: true).trim() as String
                             println("disk_size = ${disk_size}")
                         }
                         bat './Stages/Stage1.bat'
@@ -48,6 +48,10 @@ pipeline {
                         label "linux"
                     }
                     steps {
+                        script {
+                            def disk_size = sh(script: "df / --output=avail | tail -1", returnStdout: true).trim() as Integer
+                            println("disk_size = ${disk_size}")
+                        }
                         sh "sleep 5"
                         sh "chmod +x ./Stages/Stage4.sh"
                         sh "./Stages/Stage4.sh ${random_number}"       
