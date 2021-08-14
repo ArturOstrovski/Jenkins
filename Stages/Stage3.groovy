@@ -12,7 +12,7 @@ import java.io.File
         long freePartitionSpace = diskPartition.getFreeSpace()
         long usablePatitionSpace = diskPartition.getUsableSpace()
  
-        println("Total C partition size : " + totalCapacity / (1024*1024*1024) + " GB")
+        println("Total C partition size : " + $totalCapacity / (1024*1024*1024) + " GB")
         println("Usable Space : " + usablePatitionSpace / (1024 *1024*1024) + " GB")
         println("Free Space : " + freePartitionSpace / (1024 *1024*1024) + " GB")
     }
