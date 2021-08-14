@@ -5,7 +5,7 @@ import java.io.File
  
     def free_Spacesss () {
  
-        diskPartition = new File("C:")
+        File diskPartition = new File("C:")
  
         long totalCapacity = diskPartition.getTotalSpace() 
  
