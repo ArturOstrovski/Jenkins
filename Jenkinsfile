@@ -12,9 +12,6 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        script {
-                            
-                        }
                         bat './Stages/Stage1.bat'
                     }
             
